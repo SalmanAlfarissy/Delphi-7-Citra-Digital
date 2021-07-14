@@ -1,0 +1,99 @@
+object Form1: TForm1
+  Left = 748
+  Top = 242
+  Width = 527
+  Height = 322
+  Caption = 'Form1'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Image1: TImage
+    Left = 224
+    Top = 8
+    Width = 209
+    Height = 217
+    Stretch = True
+  end
+  object VideoWindow1: TVideoWindow
+    Left = 8
+    Top = 8
+    Width = 201
+    Height = 217
+    FilterGraph = FilterGraph1
+    VMROptions.Mode = vmrWindowed
+    Color = clBlack
+  end
+  object ComboBox1: TComboBox
+    Left = 8
+    Top = 240
+    Width = 153
+    Height = 21
+    ItemHeight = 13
+    TabOrder = 1
+    OnChange = ComboBox1Change
+  end
+  object Button1: TButton
+    Left = 176
+    Top = 240
+    Width = 105
+    Height = 25
+    Caption = 'Aktivasi Kamera'
+    TabOrder = 2
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 304
+    Top = 240
+    Width = 57
+    Height = 25
+    Caption = 'Capture'
+    TabOrder = 3
+    OnClick = Button2Click
+  end
+  object Button3: TButton
+    Left = 408
+    Top = 240
+    Width = 65
+    Height = 25
+    Caption = 'Exit'
+    TabOrder = 4
+    OnClick = Button3Click
+  end
+  object Button4: TButton
+    Left = 440
+    Top = 168
+    Width = 59
+    Height = 25
+    Caption = 'Save'
+    TabOrder = 5
+    OnClick = Button4Click
+  end
+  object FilterGraph1: TFilterGraph
+    Mode = gmCapture
+    GraphEdit = True
+    LinearVolume = True
+    Left = 456
+    Top = 8
+  end
+  object SampleGrabber1: TSampleGrabber
+    FilterGraph = FilterGraph1
+    MediaType.data = {
+      7669647300001000800000AA00389B717DEB36E44F52CE119F530020AF0BA770
+      FFFFFFFF0000000001000000809F580556C3CE11BF0100AA0055595A00000000
+      0000000000000000}
+    Left = 456
+    Top = 104
+  end
+  object Filter1: TFilter
+    BaseFilter.data = {00000000}
+    FilterGraph = FilterGraph1
+    Left = 456
+    Top = 56
+  end
+end
